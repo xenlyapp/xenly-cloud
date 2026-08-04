@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "../components/navbar";
 import ScrollReveal from "../components/scroll-reveal";
 import "./globals.css";
@@ -76,6 +77,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ScrollReveal />
         {children}
       </body>
+      {process.env.NODE_ENV === "production" && (
+        <GoogleAnalytics gaId="G-TXD9BGKX6L" />
+      )}
     </html>
   );
 }
