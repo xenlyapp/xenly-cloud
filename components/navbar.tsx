@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export type NavigationItem = {
   href: string;
@@ -51,16 +52,17 @@ export default function Navbar({ items = defaultNavigation }: NavbarProps) {
         className="mx-auto grid h-[72px] max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-8"
       >
         <a
-          className="inline-flex w-fit items-center gap-2.5 font-semibold tracking-[-0.03em] text-white transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+          className="inline-flex w-fit items-center transition-opacity duration-200 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
           href="#o-nas"
         >
-          <span
-            aria-hidden="true"
-            className="grid size-7 place-items-center rounded-lg bg-[#635bff] text-sm text-white shadow-[0_0_24px_rgba(99,91,255,0.3)]"
-          >
-            X
-          </span>
-          Xenly
+          <Image
+            alt="Xenly"
+            className="h-7 w-auto"
+            height={35}
+            priority
+            src="/xenly-wordmark.png"
+            width={78}
+          />
         </a>
 
         <ul className="flex items-center gap-1">
