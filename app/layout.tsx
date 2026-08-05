@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   publisher: "Xenly Cloud",
   category: "Projektowanie stron internetowych",
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    icon: [{ url: "/icon.png", sizes: "512x512", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   alternates: {
     canonical: "/",

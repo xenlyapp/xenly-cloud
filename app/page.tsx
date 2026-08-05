@@ -106,7 +106,7 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Xenly Cloud",
       url: siteUrl,
-      logo: `${siteUrl}/icon.svg`,
+      logo: `${siteUrl}/icon.png`,
       description: "Nowoczesne strony internetowe dla lokalnych firm.",
       email: "kontakt@xenly.app",
       contactPoint: {
@@ -192,6 +192,39 @@ const benefits = [
     description: "Od pierwszej wiadomości rozmawiasz bezpośrednio z osobą tworzącą projekt.",
   },
 ];
+
+const appFeatures = [
+  { name: "CRM", icon: "crm" },
+  { name: "AI Assistant", icon: "ai" },
+  { name: "Invoices", icon: "invoices" },
+  { name: "Projects", icon: "projects" },
+  { name: "Clients", icon: "clients" },
+  { name: "Automations", icon: "automations" },
+];
+
+function AppFeatureIcon({ icon }: { icon: string }) {
+  if (icon === "crm") {
+    return <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />;
+  }
+
+  if (icon === "ai") {
+    return <path d="m12 3-1.4 4.1a5.5 5.5 0 0 1-3.5 3.5L3 12l4.1 1.4a5.5 5.5 0 0 1 3.5 3.5L12 21l1.4-4.1a5.5 5.5 0 0 1 3.5-3.5L21 12l-4.1-1.4a5.5 5.5 0 0 1-3.5-3.5L12 3Z" />;
+  }
+
+  if (icon === "invoices") {
+    return <path d="M6 3h9l3 3v15l-3-2-3 2-3-2-3 2V3Zm8 0v4h4M9 10h6M9 14h6" />;
+  }
+
+  if (icon === "projects") {
+    return <path d="M3 7h7l2 2h9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 0V5a2 2 0 0 1 2-2h5l2 2h4" />;
+  }
+
+  if (icon === "clients") {
+    return <path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />;
+  }
+
+  return <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M18.36 5.64l-2.12 2.12M7.76 16.24l-2.12 2.12M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />;
+}
 
 function BenefitIcon({ icon }: { icon: string }) {
   if (icon === "projekt") {
@@ -306,6 +339,51 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section
+        aria-labelledby="xenly-app-heading"
+        className="relative overflow-hidden border-y border-[#1c2433] bg-[#090e19] px-6 py-24 sm:px-8 lg:px-10 lg:py-32"
+        data-reveal
+      >
+        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-80 w-[42rem] -translate-x-1/2 rounded-full bg-[#155cc7]/15 blur-[120px]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold tracking-[0.24em] text-[#5596ff]">XENLY ECOSYSTEM</p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl" id="xenly-app-heading">
+              Xenly App
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-400 sm:text-xl">
+              The intelligent platform for managing your business.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {appFeatures.map((feature) => (
+              <article
+                className="group flex items-center gap-5 rounded-[24px] border border-[#252d3c] bg-[#0d1322]/90 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.14)] transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[#3e5f9e] hover:bg-[#10182d] hover:shadow-[0_24px_58px_rgba(0,0,0,0.22)]"
+                key={feature.name}
+              >
+                <div className="grid size-12 shrink-0 place-items-center rounded-2xl border border-[#344364] bg-[#141f3d] text-[#82b4ff] transition-colors duration-300 group-hover:border-[#4d69a0] group-hover:bg-[#18284b]">
+                  <svg aria-hidden="true" fill="none" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="22">
+                    <AppFeatureIcon icon={feature.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">{feature.name}</h3>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <a
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#087cf0] px-6 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(8,124,240,0.24)] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#1a92ff] hover:shadow-[0_14px_36px_rgba(8,124,240,0.32)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#61a8ff]"
+              href="https://xenly.app"
+            >
+              Explore Xenly App
+              <span aria-hidden="true" className="ml-2">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       <section className="border-y border-[#1c2433] bg-[#090e19] px-6 py-24 sm:px-8 lg:px-10 lg:py-32" data-reveal id="realizacje">
         <div className="mx-auto max-w-7xl">
