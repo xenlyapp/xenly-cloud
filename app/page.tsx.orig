@@ -195,11 +195,11 @@ const benefits = [
 
 const appFeatures = [
   { name: "CRM", icon: "crm" },
-  { name: "Asystent AI", icon: "ai" },
-  { name: "Faktury", icon: "invoices" },
-  { name: "Projekty", icon: "projects" },
-  { name: "Klienci", icon: "clients" },
-  { name: "Automatyzacje", icon: "automations" },
+  { name: "AI Assistant", icon: "ai" },
+  { name: "Invoices", icon: "invoices" },
+  { name: "Projects", icon: "projects" },
+  { name: "Clients", icon: "clients" },
+  { name: "Automations", icon: "automations" },
 ];
 
 function AppFeatureIcon({ icon }: { icon: string }) {
@@ -339,6 +339,52 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section
+        aria-labelledby="xenly-app-heading"
+        className="relative overflow-hidden border-y border-[#1c2433] bg-[#090e19] px-6 py-24 sm:px-8 lg:px-10 lg:py-32"
+        data-reveal
+      >
+        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-80 w-[42rem] -translate-x-1/2 rounded-full bg-[#155cc7]/15 blur-[120px]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold tracking-[0.24em] text-[#5596ff]">XENLY ECOSYSTEM</p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl" id="xenly-app-heading">
+              Xenly App
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-400 sm:text-xl">
+              The intelligent platform for managing your business.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {appFeatures.map((feature) => (
+              <article
+                className="group flex items-center gap-5 rounded-[24px] border border-[#252d3c] bg-[#0d1322]/90 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.14)] transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[#3e5f9e] hover:bg-[#10182d] hover:shadow-[0_24px_58px_rgba(0,0,0,0.22)]"
+                key={feature.name}
+              >
+                <div className="grid size-12 shrink-0 place-items-center rounded-2xl border border-[#344364] bg-[#141f3d] text-[#82b4ff] transition-colors duration-300 group-hover:border-[#4d69a0] group-hover:bg-[#18284b]">
+                  <svg aria-hidden="true" fill="none" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="22">
+                    <AppFeatureIcon icon={feature.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">{feature.name}</h3>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <a
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#087cf0] px-6 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(8,124,240,0.24)] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#1a92ff] hover:shadow-[0_14px_36px_rgba(8,124,240,0.32)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#61a8ff]"
+              href="https://xenly.app"
+            >
+              Explore Xenly App
+              <span aria-hidden="true" className="ml-2">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
       <section className="border-y border-[#1c2433] bg-[#090e19] px-6 py-24 sm:px-8 lg:px-10 lg:py-32" data-reveal id="realizacje">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
@@ -635,55 +681,6 @@ export default function Home() {
               href="mailto:kontakt@xenly.app"
             >
               Bezpłatna wycena
-            </a>
-          </div>
-        </div>
-      </section>
-
-
-      <section
-        aria-labelledby="xenly-app-heading"
-        className="relative overflow-hidden border-y border-[#1c2433] bg-[#090e19] px-6 py-24 sm:px-8 lg:px-10 lg:py-32"
-        data-reveal
-      >
-        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-0 h-80 w-[42rem] -translate-x-1/2 rounded-full bg-[#155cc7]/15 blur-[120px]" />
-        <div className="relative mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold tracking-[0.24em] text-[#5596ff]">EKOSYSTEM XENLY</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl" id="xenly-app-heading">
-              Poznaj Xenly App
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-400 sm:text-xl">
-              Już wkrótce udostępnimy nowoczesną platformę do zarządzania firmą, klientami, projektami, marketingiem oraz automatyzacjami AI.
-            </p>
-            <span className="mt-6 inline-flex rounded-full border border-[#5794ff]/45 bg-[#16356e]/50 px-3 py-1 text-xs font-semibold text-[#92bdff]">
-              Już wkrótce
-            </span>
-          </div>
-
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {appFeatures.map((feature) => (
-              <article
-                className="group flex items-center gap-5 rounded-[24px] border border-[#252d3c] bg-[#0d1322]/90 p-6 shadow-[0_18px_48px_rgba(0,0,0,0.14)] transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[#3e5f9e] hover:bg-[#10182d] hover:shadow-[0_24px_58px_rgba(0,0,0,0.22)]"
-                key={feature.name}
-              >
-                <div className="grid size-12 shrink-0 place-items-center rounded-2xl border border-[#344364] bg-[#141f3d] text-[#82b4ff] transition-colors duration-300 group-hover:border-[#4d69a0] group-hover:bg-[#18284b]">
-                  <svg aria-hidden="true" fill="none" height="22" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" viewBox="0 0 24 24" width="22">
-                    <AppFeatureIcon icon={feature.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">{feature.name}</h3>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-12 flex justify-center">
-            <a
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#087cf0] px-6 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(8,124,240,0.24)] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#1a92ff] hover:shadow-[0_14px_36px_rgba(8,124,240,0.32)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#61a8ff]"
-              href="https://xenly.app"
-            >
-              Dowiedz się więcej
-              <span aria-hidden="true" className="ml-2">↗</span>
             </a>
           </div>
         </div>
