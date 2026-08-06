@@ -47,6 +47,21 @@ section[id] {
   transform: translateY(0);
 }
 
+@keyframes hero-mockup-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-mockup-float {
+  animation: hero-mockup-float 6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

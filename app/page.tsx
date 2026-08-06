@@ -263,30 +263,42 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-[#3a81ff]/30 bg-[#133169]/45 px-3 py-1.5 text-xs font-semibold tracking-[0.18em] text-[#75b0ff]">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-[#3a81ff]" />
-              PREMIUMOWE STRONY DLA FIRM LOKALNYCH
+              NOWOCZESNE ROZWIĄZANIA DLA MAŁYCH FIRM
             </p>
             <h1
               className="mt-7 text-5xl font-semibold tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl lg:leading-[1.02]"
               id="hero-heading"
             >
-              Projektujemy nowoczesne strony internetowe dla lokalnych firm.
+              Rozwijamy firmy dzięki<br />
+              AI, automatyzacjom<br />
+              i nowoczesnym stronom.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Pomagamy zamieniać wyszukiwania w wizyty, telefony i rezerwacje.
-              Tak, aby Twoja firma była łatwa do znalezienia i wybrania.
+              Pomagamy małym firmom zdobywać klientów, budować profesjonalny wizerunek i oszczędzać czas dzięki stronom internetowym, sztucznej inteligencji oraz automatyzacjom.
             </p>
+            <ul className="mt-7 flex max-w-xl flex-wrap gap-2.5" aria-label="Zakres wsparcia">
+              {["Strony internetowe", "Automatyzacje AI", "SEO i widoczność", "Wsparcie techniczne"].map((feature) => (
+                <li
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm font-medium text-slate-300"
+                  key={feature}
+                >
+                  <span aria-hidden="true" className="text-[#75b0ff]">✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#087cf0] px-5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(8,124,240,0.24)] transition-colors duration-200 hover:bg-[#1a92ff] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#61a8ff]"
-                href="#realizacje"
+                href="mailto:kontakt@xenly.app"
               >
-                Zobacz realizacje
+                Rozpocznij projekt
               </a>
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/15 bg-white/[0.03] px-5 text-sm font-semibold text-white transition-colors duration-200 hover:border-white/25 hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#61a8ff]"
-                href="mailto:kontakt@xenly.app"
+                href="#realizacje"
               >
-                Darmowa wycena
+                Zobacz realizacje
               </a>
             </div>
             <p className="mt-6 text-sm text-slate-500">Bez zobowiązań. Odpowiadamy zwykle w ciągu jednego dnia roboczego.</p>
@@ -294,7 +306,7 @@ export default function Home() {
 
           <div
             aria-label="Podgląd nowoczesnej strony lokalnej firmy"
-            className="rounded-[28px] border border-[#293143] bg-[#0e1424] p-3 shadow-[0_28px_80px_rgba(0,0,0,0.32)]"
+            className="hero-mockup-float relative rounded-[28px] border border-[#34405a] bg-[#0e1424] p-3 shadow-[0_32px_90px_rgba(0,0,0,0.42),0_0_70px_rgba(23,111,224,0.18)]"
             role="img"
           >
             <div className="overflow-hidden rounded-[20px] border border-[#293143] bg-[#090d17]">
@@ -695,7 +707,9 @@ export default function Home() {
             <div className="max-w-sm">
               <p className="text-xl font-semibold tracking-[-0.04em] text-white">Xenly Cloud</p>
               <p className="mt-4 leading-7 text-slate-400">
-                Projektujemy nowoczesne strony internetowe dla lokalnych firm.
+              Rozwijamy firmy dzięki<br />
+              AI, automatyzacjom<br />
+              i nowoczesnym stronom.
               </p>
             </div>
             <div>
