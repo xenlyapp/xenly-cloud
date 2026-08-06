@@ -6,7 +6,6 @@ import Image from "next/image";
 export type NavigationItem = {
   href: string;
   label: string;
-  badge?: string;
   external?: boolean;
 };
 
@@ -15,9 +14,9 @@ const defaultNavigation: NavigationItem[] = [
   { href: "#realizacje", label: "Realizacje" },
   { href: "#uslugi", label: "Usługi" },
   { href: "#cennik", label: "Cennik" },
-  { href: "https://xenly.app", label: "Xenly App", badge: "WKRÓTCE", external: true },
   { href: "#dlaczego-xenly", label: "Dlaczego Xenly" },
   { href: "#kontakt", label: "Kontakt" },
+  { href: "https://xenly.app", label: "Xenly App", external: true },
 ];
 
 type NavbarProps = {
@@ -50,6 +49,8 @@ export default function Navbar({ items = defaultNavigation }: NavbarProps) {
     return () => window.removeEventListener("scroll", updateActiveSection);
   }, [items]);
 
+  const xenlyAppItem = items.find((item) => item.external);
+
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl lg:hidden">
@@ -80,7 +81,7 @@ export default function Navbar({ items = defaultNavigation }: NavbarProps) {
                     target={item.external ? "_blank" : undefined}
                   >
                     {item.label}
-                    {item.badge && <span className="rounded-full border border-[#3a81ff]/30 bg-[#133169]/45 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#75b0ff]">{item.badge}</span>}
+                    {item.external && <span aria-hidden="true" className="text-xs text-[#75b0ff]">↗</span>}
                   </a>
                 </li>
               ))}
@@ -108,7 +109,7 @@ export default function Navbar({ items = defaultNavigation }: NavbarProps) {
         </a>
 
         <ul className="flex items-center gap-1">
-          {items.map((item) => {
+          {items.filter((item) => !item.external).map((item) => {
             const isActive = !item.external && activeHref === item.href;
 
             return (
@@ -122,11 +123,23 @@ export default function Navbar({ items = defaultNavigation }: NavbarProps) {
                   target={item.external ? "_blank" : undefined}
                 >
                   {item.label}
-                  {item.badge && <span className="rounded-full border border-[#3a81ff]/30 bg-[#133169]/45 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#75b0ff]">{item.badge}</span>}
                 </a>
               </li>
             );
           })}
+          {xenlyAppItem && (
+            <li className="ml-5 border-l border-white/10 pl-5">
+              <a
+                className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-cyan-300"
+                href={xenlyAppItem.href}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {xenlyAppItem.label}
+                <span aria-hidden="true" className="text-xs text-[#75b0ff]">↗</span>
+              </a>
+            </li>
+          )}
         </ul>
 
         <a
