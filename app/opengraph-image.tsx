@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-static";
+
 export const alt = "Xenly Cloud — nowoczesne strony internetowe dla lokalnych firm";
 
 export const size = {
